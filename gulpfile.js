@@ -29,7 +29,7 @@ const compSass = () => {
 
 // BrowserSync設定
 const browserSyncOption = {
-  proxy: 'http://localhost:8890/service/',
+  proxy: 'http://localhost:8893/service/',
   open: true,
   watchOptions: {
     debounceDelay: 1000,
