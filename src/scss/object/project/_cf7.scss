@@ -1,0 +1,230 @@
+@use "../../global" as *;
+
+/*デフォルトのサンクスメッセージを非表示*/
+.wpcf7-response-output {
+    display: none;
+}
+.wpcf7-spinner {
+    display: none;
+}
+
+.p-cf7__wrap {
+    max-width: 940px;
+    margin-inline: auto;
+    padding: 80px $pd-content-side;
+    p {
+        margin-bottom: 0;
+    }
+}
+.p-cf7__top {
+    margin-bottom: 50px;
+}
+.p-cf7__confirm,
+.p-cf7__thanks {
+    display: none;
+}
+
+.p-cf7__item:not(:nth-child(1)) {
+    margin-top: 50px;
+}
+.p-cf7__item-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.p-cf7__item-label-required {
+    padding: 5px 10px;
+    border: 1px solid $clr-primary;
+    background-color: $clr-primary;
+    color: $clr-gs-100;
+    font-size: 12px;
+    line-height: $lh-heading;
+}
+.p-cf7__item-label-any {
+    padding: 5px 10px;
+    border: 1px solid $clr-primary;
+    background-color: $clr-gs-100;
+    color: $clr-primary;
+    font-size: 12px;
+    line-height: $lh-heading;
+}
+.p-cf7__item-label + p {
+    margin-top: 20px;
+}
+.wpcf7-list-item {
+    @include md {
+        display: block;
+        margin: 0;
+    }
+}
+.wpcf7-list-item.first {
+    margin-left: 0;
+}
+
+//プライバシーポリシー
+.p-cf7__privacy-policy-wrap {
+    overflow-y: scroll;
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    border: 1px solid $clr-gs-500;
+    background-color: $clr-gs-100;
+    scrollbar-color: $clr-primary $clr-gs-200;
+    scrollbar-width: thin;
+    p {
+        margin-bottom: 20px;
+    }
+}
+.p-cf7__acceptance-wrap {
+    margin-top: 10px;
+    text-align: center;
+}
+
+//確認ボタン
+.p-cf7__btn-wrap {
+    margin-top: 50px;
+    text-align: center;
+}
+.p-cf7__attention {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    &.is-active {
+        display: block;
+    }
+}
+
+//ラジオボタン
+.wpcf7-form input[type="radio"] {
+    position: absolute;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    opacity: 0;
+}
+input[type="radio"] + .wpcf7-list-item-label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    &:before,
+    &:after {
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+    &:before {
+        background-color: $clr-gs-100;
+        border: 1px solid $clr-gs-300;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        left: 5px;
+    }
+    &:after {
+        background-color: $clr-primary;
+        border-radius: 50%;
+        opacity: 0;
+        width: 14px;
+        height: 14px;
+        left: 8px;
+    }
+}
+.wpcf7-form input[type="radio"]:checked + .wpcf7-list-item-label::after {
+    opacity: 1;
+}
+
+//チェックボックス
+.wpcf7-form input[type="checkbox"] {
+    position: absolute;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    opacity: 0;
+}
+input[type="checkbox"] + .wpcf7-list-item-label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    &:before,
+    &:after {
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+    &:before {
+        background-color: $clr-gs-100;
+        border: 1px solid $clr-gs-300;
+        width: 20px;
+        height: 20px;
+        left: 5px;
+    }
+    &:after {
+        width: 18px;
+        height: 11px;
+        border-top: 3px solid $clr-accent;
+        border-right: 3px solid $clr-accent;
+        transform: translateY(-50%) rotate(135deg);
+        left: 7px;
+        top: 9px;
+        opacity: 0;
+    }
+}
+.wpcf7-form input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+    opacity: 1;
+}
+
+//テキスト系
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $clr-gs-500;
+    border-radius: 3px;
+    background-color: $clr-gs-200;
+}
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus {
+    background: $clr-tint;
+    border: 2px solid $clr-primary;
+    outline: 0;
+}
+
+//ボタン
+.wpcf7-form input[type="button"] {
+    padding: 15px 30px;
+    border-radius: $br-base;
+    background-color: $clr-primary;
+    color: $clr-gs-100;
+    &:disabled {
+        opacity: 0.2;
+    }
+    & + input[type="submit"] {
+        margin-left: 15px;
+    }
+}
+.wpcf7-form input[type="submit"] {
+    padding: 15px 30px;
+    border-radius: $br-base;
+    background-color: $clr-primary;
+    color: $clr-gs-100;
+}

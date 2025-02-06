@@ -1,0 +1,6 @@
+@use "sass:math";
+@use "../variable" as *;
+
+@mixin lh($lin, $fontsize: $fs-base) {
+    line-height: math.div($lin, $fontsize);
+}

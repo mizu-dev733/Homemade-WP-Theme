@@ -1,0 +1,16 @@
+@use "../../global" as *;
+
+.p-thanks__inner {
+    padding-block: 150px 100px;
+    text-align: center;
+}
+.p-thanks__title {
+    font-size: clamp-calc(24px, 32px);
+    font-weight: $fw-bold;
+}
+.p-thanks__text {
+    margin-top: 50px;
+}
+.p-thanks__btn-wrap {
+    margin-top: 50px;
+}

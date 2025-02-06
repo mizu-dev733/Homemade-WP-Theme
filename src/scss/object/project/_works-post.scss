@@ -1,0 +1,39 @@
+@use "../../global" as *;
+
+.p-works-post__category {
+    display: inline-block;
+    padding: 5px 25px;
+    border: 1px solid $clr-primary;
+    color: $clr-primary;
+}
+.p-works-post__title {
+    margin-top: 10px;
+    font-size: clamp-calc(20px, 24px);
+    font-weight: $fw-medium;
+}
+.p-works-post__slider {
+    overflow: hidden;
+}
+.p-works-post__slider-item {
+    display: grid;
+    place-items: center;
+}
+.p-works-post__thumbnails-item.is-active {
+    border-color: $clr-primary !important;
+}
+.p-works-post__slider-img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.p-works-post__cont {
+    margin-top: 70px;
+}
+.p-works-post__term {
+    margin-top: 20px;
+    color: $clr-primary;
+    font-size: 14px;
+}
+.p-works-post__btn {
+    margin-top: 80px;
+    text-align: center;
+}

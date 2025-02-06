@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../variable" as *;
+
+//SPファーストの場合
+// @mixin min {
+//     @media (min-width: #{map.get($breakpoints, "min")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin sm {
+//     @media (min-width:  #{map.get($breakpoints, "sm")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin md {
+//     @media (min-width:  #{map.get($breakpoints, "md")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin lg {
+//     @media (min-width:  #{map.get($breakpoints, "lg")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin xl {
+//     @media (min-width:  #{map.get($breakpoints, "xl")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin x2l {
+//     @media (min-width:  #{map.get($breakpoints, "x2l")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin x3l {
+//     @media (min-width:  #{map.get($breakpoints, "x3l")}px) {
+//         @content;
+//     }
+// }
+
+// @mixin ur {
+//     @media (min-width:  #{map.get($breakpoints, "ur")}px) {
+//         @content;
+//     }
+// }
+
+//PCファーストの場合
+@mixin min {
+    @media (max-width: #{map.get($breakpoints, "min")}px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width:  #{map.get($breakpoints, "sm")}px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width:  #{map.get($breakpoints, "md")}px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width:  #{map.get($breakpoints, "lg")}px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width:  #{map.get($breakpoints, "xl")}px) {
+        @content;
+    }
+}
+
+@mixin x2l {
+    @media (max-width:  #{map.get($breakpoints, "x2l")}px) {
+        @content;
+    }
+}
+
+@mixin x3l {
+    @media (max-width:  #{map.get($breakpoints, "x3l")}px) {
+        @content;
+    }
+}
+
+@mixin ur {
+    @media (max-width:  #{map.get($breakpoints, "ur")}px) {
+        @content;
+    }
+}

@@ -1,0 +1,61 @@
+@use "../global" as *;
+
+.l-lower-mv {
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--header-height);
+}
+.l-lower-mv__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp-calc(60px, 165px) clamp-calc($pd-content-side, 60px) clamp-calc(60px, 155px);
+}
+
+.l-lower-mv__head {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing;
+}
+.l-lower-mv__head.is-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
+.l-lower-mv__page-en {
+    color: $clr-primary;
+    font-size: clamp-calc(14px, 16px);
+    font-family: $ff-en;
+    font-weight: $fw-medium;
+    text-transform: uppercase;
+}
+.l-lower-mv__page-ja {
+    font-size: clamp-calc(30px, 48px);
+    font-weight: $fw-medium;
+    letter-spacing: $ls-base;
+    line-height: $lh-heading;
+}
+.l-lower-mv__breadcrumb {
+    transform: translateX(30px);
+    opacity: 0;
+    transition: all $duration $easing 0.6s;
+}
+.l-lower-mv__breadcrumb.is-scroll {
+    transform: translateX(0);
+    opacity: 1;
+}
+.l-lower-mv__image {
+    width: 100%;
+    height: min(35vw, 355px);
+    object-fit: cover;
+}
+
+.l-lower-mv__picture .l-lower-mv__image {
+    opacity: 0;
+    transition:
+        opacity $duration $easing 0.3s,
+        transform $duration $easing 0.3s;
+}
+
+.l-lower-mv__picture.is-scroll .l-lower-mv__image {
+    opacity: 1;
+}

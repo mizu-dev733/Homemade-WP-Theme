@@ -1,0 +1,8 @@
+@use "../global" as *;
+
+br.u-md {
+    display: none;
+    @include md {
+        display: block;
+    }
+}

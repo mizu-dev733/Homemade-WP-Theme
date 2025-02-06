@@ -1,0 +1,33 @@
+@use "../../global" as *;
+
+.c-heading01 {
+    text-align: center;
+}
+.c-heading01__en {
+    display: inline-block;
+    transform: translateY(30px);
+    color: $clr-primary;
+    font-size: clamp-calc(20px, 24px);
+    font-family: $ff-en;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all $duration 0.2s;
+}
+.c-heading01__ja {
+    transform: translateY(30px);
+    font-size: clamp-calc(30px, 32px);
+    line-height: $lh-heading;
+    opacity: 0;
+    transition: all $duration 0.2s;
+}
+.c-heading01.is-scroll {
+    .c-heading01__en {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .c-heading01__ja {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: 0.2s;
+    }
+}

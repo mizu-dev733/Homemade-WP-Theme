@@ -1,0 +1,16 @@
+@use "../global" as *;
+
+.l-inner {
+    width: 100%;
+    max-width: $w-content;
+    padding-inline: $pd-content-side;
+    margin-right: auto;
+    margin-left: auto;
+    @include lg {
+        padding-inline: $pd-content-side;
+    }
+    @include md {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

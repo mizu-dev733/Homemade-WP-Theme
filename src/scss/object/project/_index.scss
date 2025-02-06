@@ -1,0 +1,33 @@
+@use "mv";
+@use "archive";
+@use "nav-pc";
+@use "nav-sp";
+
+@use "company-greeting";
+@use "company-profile";
+@use "company-slider";
+
+@use "cf7";
+@use "contact-intro";
+
+@use "home-company";
+@use "home-news";
+@use "home-recruit";
+@use "home-service";
+@use "home-works";
+
+@use "news-archive";
+@use "news-post";
+
+@use "recruit-intro";
+@use "recruit-requirements";
+
+@use "service-info";
+@use "service-intro";
+
+@use "thanks";
+
+@use "works-archive.scss";
+@use "works-post.scss";
+@use "works-related.scss";
+@use "works-tax.scss";

@@ -1,0 +1,67 @@
+@use "../../global" as *;
+
+.p-contact-intro__head {
+    padding-block: 30px;
+    text-align: center;
+}
+.p-contact-intro__title {
+    position: relative;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    font-size: clamp-calc(20px, 24px);
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 1px;
+        background-color: $clr-primary;
+    }
+}
+.p-contact-intro__tel {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 35px clamp-calc(20px, 100px) 20px;
+    background-color: $clr-tint;
+    text-align: center;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing;
+}
+.p-contact-intro__tel.is-scroll {
+    transform: translate(0);
+    opacity: 1;
+}
+.p-contact-intro__tel-title {
+    font-size: clamp-calc(18px, 20px);
+}
+.p-contact-intro__tel-inner {
+    margin-top: 20px;
+    padding: 35px 3%;
+    background-color: $clr-gs-100;
+}
+.p-contact-intro__tel-num {
+    align-items: center;
+}
+.p-contact-intro__tel-href {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    font-size: clamp-calc(30px, 40px);
+    font-family: $ff-en;
+    line-height: $lh-heading;
+    &:before {
+        content: "";
+        display: inline-block;
+        width: clamp-calc(28px, 33px);
+        aspect-ratio: 1;
+        background-color: $clr-accent;
+        mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.1664 26.2V31.2C34.1683 31.6641 34.0732 32.1236 33.8872 32.5489C33.7013 32.9742 33.4286 33.3559 33.0865 33.6697C32.7445 33.9835 32.3407 34.2224 31.901 34.3711C31.4613 34.5198 30.9953 34.5751 30.5331 34.5333C25.4044 33.976 20.4781 32.2235 16.1497 29.4166C12.1228 26.8577 8.70862 23.4436 6.14973 19.4166C3.33302 15.0686 1.58013 10.1183 1.03306 4.96662C0.99141 4.50574 1.04618 4.04123 1.19389 3.60267C1.3416 3.16411 1.57901 2.76111 1.891 2.41933C2.20299 2.07755 2.58273 1.80447 3.00604 1.61749C3.42935 1.43052 3.88696 1.33373 4.34973 1.33329H9.34973C10.1586 1.32533 10.9427 1.61176 11.556 2.13918C12.1693 2.6666 12.5699 3.39904 12.6831 4.19996C12.8941 5.80007 13.2855 7.37117 13.8497 8.88329C14.074 9.47983 14.1225 10.1281 13.9896 10.7514C13.8566 11.3747 13.5478 11.9468 13.0997 12.4L10.9831 14.5166C13.3557 18.6892 16.8105 22.144 20.9831 24.5166L23.0997 22.4C23.5529 21.9519 24.125 21.643 24.7483 21.5101C25.3715 21.3772 26.0199 21.4257 26.6164 21.65C28.1285 22.2142 29.6996 22.6056 31.2997 22.8166C32.1093 22.9308 32.8487 23.3386 33.3773 23.9625C33.9058 24.5863 34.1867 25.3826 34.1664 26.2Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        transition: all $duration;
+    }
+}

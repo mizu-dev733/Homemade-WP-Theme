@@ -1,0 +1,64 @@
+@use "../global" as *;
+/* header
+---------------------------------------------------*/
+
+.l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zi-header;
+    width: 100%;
+    background-color: $clr-gs-100;
+}
+.l-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    height: var(--header-height);
+    margin-inline: auto;
+    padding: 0 15px;
+}
+.l-header__logo-wrap {
+    width: clamp-calc(200px, 240px);
+}
+.l-header__cont {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    height: 100%;
+    @include lg {
+        display: none;
+    }
+}
+.l-header__contact-btn {
+    position: relative;
+    padding: 15px 20px;
+    border: 1px solid $clr-accent;
+    border-radius: $br-base;
+    background-color: $clr-accent;
+    color: $clr-gs-100;
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        aspect-ratio: 1;
+        padding-right: 10px;
+        background-color: $clr-gs-100;
+        mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 6L12 13L2 6' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        vertical-align: middle;
+        transition: all $duration;
+    }
+}
+.l-header__contact-btn:hover {
+    background-color: $clr-gs-100;
+    color: $clr-accent;
+    opacity: 1;
+    &:before {
+        background-color: $clr-accent;
+    }
+}

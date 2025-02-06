@@ -1,0 +1,54 @@
+@use "../../global" as *;
+
+.c-btn01 {
+    .c-btn01__href {
+        display: inline-block;
+        position: relative;
+        min-height: 55px;
+        padding: 15px 55px 15px 35px;
+        border: 1px solid $clr-gs-300;
+        border-radius: 9999px;
+        background-color: $clr-gs-100;
+        letter-spacing: 0.2em;
+    }
+    .c-btn01__ico {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        bottom: 0;
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        border-radius: 50%;
+        background-color: $clr-accent;
+        vertical-align: baseline;
+        transition: all $duration;
+        &:after {
+            content: "";
+            display: block;
+            width: 6px;
+            height: 10px;
+            background-color: $clr-gs-100;
+            mask-image: url('data:image/svg+xml;utf8,<svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7.5L4 4.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            transition: all $duration;
+        }
+    }
+
+    .c-btn01__href:hover {
+        border-color: $clr-accent;
+        background-color: $clr-accent;
+        color: $clr-gs-100;
+        opacity: 1;
+        .c-btn01__ico {
+            background-color: $clr-gs-100;
+            &::after {
+                background-color: $clr-accent;
+            }
+        }
+    }
+}

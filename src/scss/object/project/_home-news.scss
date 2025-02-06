@@ -1,0 +1,122 @@
+@use "../../global" as *;
+
+.p-home-news {
+    padding: 96px 0;
+}
+.p-home-news__head {
+    text-align: center;
+}
+
+.p-home-news__cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    width: min($w-content, 100%);
+    margin: clamp-calc(70px, 50px) auto 0;
+    @include lg {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+.p-home-news__tab-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration 0.2s;
+    @include lg {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+.p-home-news__tab-list.is-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-home-news__tab {
+    position: relative;
+    transition: all $duration;
+}
+.p-home-news__tab.is-active {
+    margin-bottom: 13px;
+    &:after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, calc(100% + 3px));
+        background-color: $clr-primary;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+}
+.p-home-news__list-wrap {
+    width: min(900px, 100%);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration 0.4s;
+}
+.p-home-news__list-wrap.is-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-home-news__category-list {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 0s;
+}
+.p-home-news__category-list.is-active {
+    visibility: visible;
+    height: 100%;
+    opacity: 1;
+    transition:
+        all $duration,
+        height 0s;
+}
+.p-home-news__item {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed $clr-gs-300;
+}
+.p-home-news__item:not(:first-child) {
+    margin-top: 30px;
+}
+.p-home-news__item-href {
+    display: flex;
+    gap: 15px;
+    @include lg {
+        flex-direction: column;
+    }
+}
+.p-home-news__item-info {
+    display: flex;
+    gap: 15px;
+}
+.p-home-news__item-time {
+    font-family: $ff-en;
+}
+.p-home-news__item-category {
+    min-width: 95px;
+    padding: 3px 10px;
+    border-radius: $br-base;
+    background-color: $clr-secondary;
+    font-size: $fs-sm;
+    text-align: center;
+}
+.p-home-news__item-title {
+    display: inline-block;
+    @include md {
+        display: block;
+    }
+}
+.p-home-news__bottom {
+    width: min($w-content, 100%);
+    margin: 30px auto 0;
+}

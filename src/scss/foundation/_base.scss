@@ -1,0 +1,73 @@
+@use "../global" as *;
+
+/* base
+--------------------------- */
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+    width: 100%;
+    color: $clr-font;
+    font-size: $fs-base;
+    font-family: $ff-ja;
+    font-weight: $fw-regular;
+    line-height: $lh-base;
+}
+p {
+    margin: 0 0 1em;
+    letter-spacing: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+a {
+    color: $clr-font;
+    text-decoration: none;
+    transition: $duration;
+}
+a:hover {
+    opacity: 0.6;
+}
+
+mark {
+    padding: 4px 0;
+}
+
+img,
+video,
+object {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+// floatを指定している要素の親要素に使用
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+    // iphoneのsafariでボタンがカスタマイズできるようにする
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}

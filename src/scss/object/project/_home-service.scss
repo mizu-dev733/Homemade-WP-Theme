@@ -1,0 +1,98 @@
+@use "../../global" as *;
+
+.p-home-service {
+    padding-block: clamp-calc(50px, 150px);
+    .p-home-service__inner {
+        display: grid;
+        grid-template-columns: 1fr min(500px, 50%);
+        gap: 0 min(11.459vw, 300px);
+        @include md {
+            grid-template-columns: 1fr;
+        }
+    }
+    .p-home-service__info-wrap {
+        position: relative;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all $duration 0.2s;
+        @include md {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            margin-top: 30px;
+        }
+    }
+    .p-home-service__info-wrap.is-scroll {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .p-home-service__info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: $duration;
+        @include md {
+        }
+    }
+    .p-home-service__info.is-active {
+        opacity: 1;
+        position: relative;
+    }
+    .p-home-service__img {
+        aspect-ratio: 3/ 2;
+        object-fit: cover;
+    }
+    .p-home-service__info-en {
+        color: $clr-gs-300;
+        font-size: 14px;
+        font-family: $ff-en;
+        text-transform: uppercase;
+    }
+    .p-home-service__info-title-ja {
+        font-size: 24px;
+        line-height: $lh-heading;
+    }
+    .p-home-service__info-detail {
+        margin-top: 30px;
+    }
+    .p-home-service__lead {
+        margin-top: 50px;
+    }
+    .p-home-service__list {
+        margin-top: 50px;
+    }
+    .p-home-service__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px dashed $clr-primary;
+        cursor: pointer;
+        transition: $duration;
+        &:after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $clr-gs-300;
+            border-radius: 50%;
+            background-color: rgba($clr-gs-300, 0.2);
+            transition: $duration;
+        }
+    }
+    .p-home-service__item.is-active {
+        background-color: rgba($clr-gs-300, 0.2);
+        &:after {
+            background-color: $clr-primary;
+        }
+    }
+    .p-home-service__btn {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        margin-top: 50px;
+        @include md {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+        }
+    }
+}

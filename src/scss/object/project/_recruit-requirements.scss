@@ -1,0 +1,110 @@
+@use "../../global" as *;
+
+.p-recruit-requirements__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.p-recruit-requirements__head {
+    text-align: center;
+}
+.p-recruit-requirements__en {
+    display: inline-block;
+    color: $clr-primary;
+    font-size: clamp-calc(20px, 24px);
+    font-weight: $fw-medium;
+    text-transform: uppercase;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing;
+}
+.is-scroll .p-recruit-requirements__en {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-recruit-requirements__title {
+    font-size: clamp-calc(24px, 36px);
+    line-height: $lh-heading;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing 0.3s;
+}
+.is-scroll .p-recruit-requirements__title {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-recruit-requirements__cont {
+    margin-top: 50px;
+    text-align: center;
+}
+.p-recruit-requirements__tab {
+    display: inline-block;
+    min-width: 138px;
+    padding: 10px 20px;
+    border: 1px solid $clr-primary;
+    color: $clr-primary;
+    text-align: center;
+    cursor: pointer;
+    transition: all $duration;
+    @include md {
+        display: block;
+        margin-top: 10px;
+        padding: 5px 15px;
+    }
+}
+.p-recruit-requirements__tab:not(.p-recruit-requirements__tab[for="tab-1"]) {
+    border-left-width: 0px;
+    @include md {
+        border-left-width: 1px;
+    }
+}
+.p-recruit-requirements__cont input {
+    display: none;
+}
+.p-recruit-requirements__cont input:checked + .p-recruit-requirements__tab {
+    background-color: $clr-primary;
+    color: #fff;
+}
+.p-recruit-requirements__tab-content {
+    display: none;
+    margin-top: 50px;
+    text-align: left;
+}
+.p-recruit-requirements__tab-content-title {
+    font-size: clamp-calc(20px, 22px);
+    font-weight: $fw-medium;
+}
+.p-recruit-requirements__details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    @include md {
+        flex-direction: column;
+    }
+}
+.p-recruit-requirements__details-title {
+    display: flex;
+    align-items: center;
+    flex-basis: 20%;
+    padding: 20px 25px;
+    border-bottom: 1px solid $clr-primary;
+    @include md {
+        padding: 10px;
+        background-color: rgba($clr-primary, 0.1);
+    }
+}
+.p-recruit-requirements__details-disc {
+    flex-basis: 80%;
+    padding: 20px 25px;
+    border-bottom: 1px solid $clr-gs-300;
+    @include md {
+        padding: 10px;
+    }
+}
+#tab-1:checked ~ #content-tab-1,
+#tab-2:checked ~ #content-tab-2,
+#tab-3:checked ~ #content-tab-3,
+#tab-4:checked ~ #content-tab-4 {
+    display: block;
+}

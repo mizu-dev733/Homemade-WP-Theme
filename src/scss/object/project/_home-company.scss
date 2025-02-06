@@ -1,0 +1,126 @@
+@use "../../global" as *;
+
+.p-home-company {
+    position: relative;
+    padding-bottom: 246px;
+    @include md {
+        padding-bottom: 120px;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: $zi-background;
+        width: 658px;
+        max-width: 90%;
+        aspect-ratio: 3 / 2;
+        background: url(../images/home/company-bg.png) bottom left / contain no-repeat;
+        opacity: 0.5;
+    }
+}
+.p-home-company__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-left: clamp-calc($pd-content-side, 200px);
+    gap: 50px;
+    @include md {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+}
+.p-home-company__cont {
+    width: 500px;
+    @include md {
+        width: 100%;
+        padding: 0 $pd-content-side;
+    }
+}
+
+.p-home-company__en {
+    display: inline-block;
+    transform: translateY(30px);
+    color: $clr-primary;
+    font-size: clamp-calc(64px, 96px);
+    font-family: $ff-en;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all $duration 0.2s;
+}
+.p-home-company__ja {
+    transform: translateY(30px);
+    font-size: clamp-calc(24px, 32px);
+    font-family: $ff-heading;
+    opacity: 0;
+    transition: all $duration 0.2s;
+}
+.p-home-company__head.is-scroll {
+    .p-home-company__en {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .p-home-company__ja {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.p-home-company__lead-wrap {
+    margin-top: 50px;
+}
+.p-home-company__btn {
+    margin-top: 60px;
+}
+
+.p-home-company__img-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+.p-home-company__img01 {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration 0.2s;
+    @include md {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+.p-home-company__img01.is-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-home-company__img02 {
+    transform: translate(108px, 188px);
+    opacity: 0;
+    transition: all $duration 0.2s;
+    @include md {
+        padding-top: 200px;
+        transform: translate(0, 30px);
+    }
+}
+.p-home-company__img02.is-scroll {
+    transform: translate(108px, 158px);
+    opacity: 1;
+    @include md {
+        transform: translate(0);
+    }
+}
+.p-home-company__img01-img {
+    width: 472px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    @include md {
+        width: 70%;
+        margin-left: auto;
+    }
+}
+.p-home-company__img02-img {
+    width: 336px;
+    aspect-ratio: 4 / 7;
+    object-fit: cover;
+    @include md {
+        width: 50%;
+    }
+}

@@ -1,0 +1,70 @@
+@use "../../global" as *;
+
+.p-company-greeting {
+    padding-block: 60px;
+}
+.p-company-greeting__head-wrap {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    @include md {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.p-company-greeting__head {
+    flex-basis: 50%;
+    @include md {
+        width: 100%;
+    }
+}
+.p-company-greeting__en {
+    color: $clr-primary;
+    font-size: clamp-calc(20px, 24px);
+    font-family: $ff-en;
+    text-transform: uppercase;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing;
+}
+.is-scroll .p-company-greeting__en {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-company-greeting__title {
+    font-size: clamp-calc(24px, 36px);
+    line-height: $lh-heading;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration $easing 0.3s;
+}
+.is-scroll .p-company-greeting__title {
+    transform: translateY(0);
+    opacity: 1;
+}
+.p-company-greeting__sub-title {
+    margin-top: 30px;
+    font-size: clamp-calc(20px, 24px);
+    font-family: $ff-heading;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: all $duration $easing 0.8s;
+}
+.is-scroll .p-company-greeting__sub-title {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.p-company-greeting__picture {
+    flex-basis: 50%;
+}
+.p-company-greeting__cont {
+    margin-top: 50px;
+}
+.p-company-greeting__name {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 1.1em;
+    font-family: $ff-heading;
+}

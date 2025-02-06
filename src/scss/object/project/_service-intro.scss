@@ -1,0 +1,28 @@
+@use "../../global" as *;
+
+.p-service-intro__inner {
+    padding-block: 60px;
+}
+.p-service-intro__head {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    font-size: clamp-calc(22px, 30px);
+    font-family: $ff-heading;
+    font-weight: $fw-medium;
+    text-align: center;
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 1px;
+        background-color: $clr-primary;
+    }
+}
+.p-service-info__intro-btn {
+    margin-top: 30px;
+    text-align: center;
+}
