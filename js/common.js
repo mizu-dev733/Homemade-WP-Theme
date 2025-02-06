@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
     loading.style.opacity = "0";
     setTimeout(() => {
       loading.style.display = "none";
-    }, 1500);
+    }, 1000); // 500ms待機してから非表示
   });
 });
 
